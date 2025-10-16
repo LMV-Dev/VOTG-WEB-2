@@ -16,10 +16,20 @@ import { useMoveScroll } from '@hooks/use-move-scroll'
 import { HomeSectionDrag } from '@components/home/home-drag'
 /*Improt Layouts*/
 import LayoutWithServiceMenu from '@layouts/ws/layout-with-service-menu'
-/* Echart */
-import * as echarts from 'echarts';
-// import 'echarts-stat';
-import ecStat from 'echarts-stat';
+// /* Echart */
+// import * as echarts from 'echarts';
+// // import 'echarts-stat';
+// import ecStat from 'echarts-stat';
+
+// import * as echarts from 'echarts';
+// import ecStat from 'echarts-stat';
+let echarts = null;
+let ecStat = null;
+if (typeof window !== 'undefined') {
+  // Only import on client
+  echarts = require('echarts');
+  ecStat = require('echarts-stat');
+}
 
 //ELEMENT
 const PAGE_TITLE = 'IPA 설문 업로드'
