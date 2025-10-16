@@ -5,9 +5,9 @@
     "scripts": {
         "pm2": "npx pm2 start \"npm run start\" --name VOTG-WEB-NEXT",
         "monit": "npx pm2 start \"npm run dev\" --name VOTG-WEB-NEXT && npx pm2 monit",
-        "dev": "next dev -p 80",
+        "dev": "next dev -p 301",
         "build": "next build",
-        "start": "next start -p 80",
+        "start": "next start -p 301",
         "lint": "next lint"
     },
     "dependencies": {
