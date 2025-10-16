@@ -1,0 +1,12 @@
+<svg id="symbol_white_exp" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="350.752" height="275.128" viewBox="0 0 350.752 275.128">
+  <defs>
+    <clipPath id="clipPath">
+      <rect id="Rectangle_112" data-name="Rectangle 112" width="350.752" height="275.128" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_145" data-name="Group 145" clipPath="url(#clipPath)">
+    <path id="Path_352" data-name="Path 352" d="M0,202.384H131.688V70.7A131.69,131.69,0,0,0,0,202.384" transform="translate(0 72.744)" fill="#fff"/>
+    <path id="Path_353" data-name="Path 353" d="M70.746,202.384h0A131.687,131.687,0,0,0,202.434,70.7H70.746Z" transform="translate(72.796 72.744)" fill="#fff"/>
+    <path id="Path_354" data-name="Path 354" d="M202.434,0l-.86,0V.022A131.676,131.676,0,0,0,70.746,131.688H202.434v0C202.434,39.963,277.957,0,277.957,0Z" transform="translate(72.796)" fill="#fff"/>
+  </g>
+</svg>

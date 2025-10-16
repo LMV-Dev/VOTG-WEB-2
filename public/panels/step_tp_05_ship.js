@@ -1,0 +1,25 @@
+import PropTypes from 'prop-types'
+import { styled } from '@mui/material/styles'
+
+export const IconTp05Ship = styled((props) => {
+    const { variant, customColor, ...other } = props
+    var color = variant === 'light' ? '#fff' : '#FF5353'
+    if (customColor != undefined) {
+        color = customColor
+    }
+    //  fill = { color }
+    return (
+        <svg width="60" height="66" viewBox="0 0 60 66" fill="none" xmlns="http://www.w3.org/2000/svg" {...other}>
+            <path d="M2 27.3844L29.9 17.5L57.8 27.3844L49.5338 48.5H10.2662L2 27.3844Z" stroke={color} strokewidth="4" strokelinecap="round" strokelinejoin="round" />
+            <path d="M12.8516 8.2002H46.9516L46.9485 23.539L29.9016 17.5002L12.8516 23.539V8.2002Z" stroke={color} strokewidth="4" strokelinejoin="round" />
+            <path d="M29.8992 8.2V2M29.8992 33V20.6M8.19922 57.8L13.6242 64L19.0492 57.8L24.4742 64L29.8992 57.8L35.3242 64L40.7492 57.8L46.1742 64L51.5992 57.8" stroke={color} strokewidth="4" strokelinecap="round" strokelinejoin="round" />
+        </svg>
+    )
+})``
+
+IconTp05Ship.defaultProps = {
+    variant: 'color',
+}
+IconTp05Ship.propTypes = {
+    variant: PropTypes.oneOf(['light', 'color']),
+}
