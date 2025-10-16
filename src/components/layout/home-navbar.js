@@ -90,7 +90,7 @@ const HomeSubNavbar = (props) => {
                         <Box sx={{
                             // flex: 1 대신 고정 너비를 주어 레이아웃 틀을 안정시킵니다.
                             // 이 값은 데스크톱 버튼들이 충분히 들어갈 너비여야 합니다.
-                            width: { md: 250 }, 
+                            width: { md: 300 }, 
                             display: 'flex',
                             justifyContent: 'flex-start',
                         }}>
@@ -104,7 +104,7 @@ const HomeSubNavbar = (props) => {
                                     }}
                                     sx={{ borderColor: '#DEE2E6', color: 'text.primary', borderRadius: '12px', fontWeight: 700 }}
                                 >
-                                    설문 제작
+                                    Make POE Survey
                                 </Button>
                                 </NextLink>
                                 <NextLink href="/about" passHref>

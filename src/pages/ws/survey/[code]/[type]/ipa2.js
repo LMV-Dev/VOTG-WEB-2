@@ -93,9 +93,15 @@ import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd'
 /*Transition*/
 import { Transition, TransitionGroup, CSSTransition } from 'react-transition-group'
 
-import * as echarts from 'echarts';
-// import 'echarts-stat';
-import ecStat from 'echarts-stat';
+// import * as echarts from 'echarts';
+// import ecStat from 'echarts-stat';
+let echarts = null;
+let ecStat = null;
+if (typeof window !== 'undefined') {
+  // Only import on client
+  echarts = require('echarts');
+  ecStat = require('echarts-stat');
+}
 
 // Import Chart Type
 import ChartType_Bar from '@components/survey/charts/chart-type-bar'

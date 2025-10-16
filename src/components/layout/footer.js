@@ -13,166 +13,213 @@ import InstagramIcon from '@mui/icons-material/Instagram'
 import YouTubeIcon from '@mui/icons-material/YouTube'
 
 export const Footer = (props) => {
-    const auth = useAuth()
-    const { logout } = useAuth()
-
-    const handleLogout = async () => {
-        try {
-            await logout()
-            handlePushRoutingEvent()
-            toast.success('로그아웃')
-        } catch (err) {
-            console.error(err)
-            toast.error('Unable to logout.')
-        }
-    }
-
-    const serviceMenu = [
-        {
-            title: '로그인·회원가입',
-            href: '/auth/login',
-        },
-        {
-            title: '로그아웃',
-            href: '/#',
-        },
-        {
-            title: '서비스 소개',
-            href: '/service/research',
-        },
-    ]
-
-    const snsMenu = [
-        {
-            title: '인스타그램',
-            href: 'https://www.instagram.com/views_on_the_go/',
-            icon: <InstagramIcon color="white" fontSize="medium" sx={{ mr: 1 }} />,
-        },
-        {
-            title: '유튜브',
-            href: 'https://www.youtube.com/@viewsonthego/videos',
-            icon: <YouTubeIcon color="white" fontSize="medium" sx={{ mr: 1 }} />,
-        },
-    ]
-
+    // 디자인 맞춤 푸터
     return (
-        <div></div>
-        // <Box
-        //     sx={{
-        //         backgroundColor: '#FF5353',
-        //         borderTopColor: 'divider',
-        //         borderTopStyle: 'solid',
-        //         borderTopWidth: 1,
-        //         pb: 6,
-        //         pt: {
-        //             md: 8,
-        //             xs: 6,
-        //         },
-        //         mt: -1,
-        //     }}
-        //     {...props}
-        // >
-        //     <Container
-        //         maxWidth="xl"
-        //         sx={{
-        //             alignItems: 'left',
-        //             display: 'flex',
-        //             flexDirection: 'column',
-        //             px: { sm: 15, xs: 2 },
-        //         }}
-        //     >
-        //         <Grid container sx={{ display: 'flex', flexDirection: 'row' }}>
-        //             <Grid item md={4} xs={12}>
-        //                 <Typography align="left" variant="h5" color="text.white">
-        //                     VIEWS ON THE GO
-        //                 </Typography>
-        //             </Grid>
-        //             <Grid item md={8} xs={12}>
-        //                 <Box sx={{ display: { sm: 'flex', xs: 'none' }, justifyContent: 'right', flexDirection: { md: 'row-reverse', xs: 'column' }, my: { md: 0, xs: 1 } }}>
-        //                     {serviceMenu.map((v, index) => {
-        //                         if (index === 0 && !auth.isAuthenticated) {
-        //                             return (
-        //                                 <Button component="a" href={v.href} key={`footer-nav-${index}`}>
-        //                                     <Box sx={{ cursor: 'pointer', ':hover': { opacity: 0.8 } }}>
-        //                                         <Typography align="left" color="text.white" sx={{ fontSize: { md: '0.9rem', xs: '1rem' }, fontWeight: 500, mr: { md: 3, xs: 1 } }}>
-        //                                             {v.title}
-        //                                         </Typography>
-        //                                     </Box>
-        //                                 </Button>
-        //                             )
-        //                         } else if (index === 1 && auth.isAuthenticated) {
-        //                             return (
-        //                                 <Button sx={{ cursor: 'pointer', ':hover': { opacity: 0.8 } }} onClick={() => handleLogout()} key={`footer-nav-${index}`}>
-        //                                     <Typography align="left" color="text.white" sx={{ fontSize: { md: '0.9rem', xs: '1rem' }, fontWeight: 500, mr: { md: 3, xs: 1 } }}>
-        //                                         {v.title}
-        //                                     </Typography>
-        //                                 </Button>
-        //                             )
-        //                         }
-        //                         if (index === 2) {
-        //                             return (
-        //                                 <Button sx={{ cursor: 'pointer', ':hover': { opacity: 0.8 } }} key={`footer-nav-${index}`} href={v.href}>
-        //                                     <Typography align="left" color="text.white" sx={{ fontSize: { md: '0.9rem', xs: '1rem' }, fontWeight: 500, mr: { md: 3, xs: 1 } }}>
-        //                                         {v.title}
-        //                                     </Typography>
-        //                                 </Button>
-        //                             )
-        //                         }
-        //                     })}
-        //                 </Box>
-        //             </Grid>
-        //         </Grid>
-
-        //         <Grid container sx={{ display: 'flex', flexDirection: 'row' }}>
-        //             <Grid item md={4} xs={12}></Grid>
-        //             <Grid item md={8} xs={12}>
-        //                 <Box sx={{ display: { sm: 'flex', xs: 'none' }, justifyContent: 'right', flexDirection: { md: 'row-reverse', xs: 'column' }, my: { md: 0, xs: 1 } }}>
-        //                     {snsMenu.map((v, index) => {
-        //                         return (
-        //                             <IconButton key={`footer-sns-${index}`} component="a" href={v.href} target="_blank" sx={{ cursor: 'pointer', ':hover': { opacity: 0.8 }, mr: { md: 2, xs: 1 } }}>
-        //                                 {v.icon}
-        //                                 <Typography align="left" color="text.white" sx={{ fontSize: { md: '0.9rem', xs: '1rem' }, fontWeight: 500, mr: { md: 2, xs: 1 } }}>
-        //                                     {v.title}
-        //                                 </Typography>
-        //                             </IconButton>
-        //                         )
-        //                     })}
-        //                 </Box>
-        //             </Grid>
-        //         </Grid>
-
-        //         <Box
-        //             sx={{
-        //                 justifyContent: 'left',
-        //                 alignItems: 'lett',
-        //                 display: 'flex',
-        //             }}
-        //         >
-        //             <Typography color="#fff" variant="caption" align="left">
-        //                 상호 : (주)로코모션뷰 | 대표자명 : 김도연
-        //                 <br />
-        //                 사업자등록번호 : 724-81-02383 | 통신판매업신고번호 : 제2022-서울영등포-2374
-        //                 <br />
-        //                 연락처 : 1899-1294 | 이메일 : info@locomotionview.com | 인스타그램 :{' '}
-        //                 <a href="https://www.instagram.com/views_on_the_go/" target="_blank">
-        //                     @views_on_the_go
-        //                 </a>
-        //                 <br />
-        //                 주소 : 서울특별시 영등포구 여의대로 108, 타워1동 4층 422디07호(여의도동, 파크원)
-        //                 <br />
-        //                 <NextLink href="/privacy" passHref>
-        //                     <a>개인정보보호정책</a>
-        //                 </NextLink>
-        //                 {` | `}
-        //                 <NextLink href="/terms" passHref>
-        //                     <a>전자상거래이용약관</a>
-        //                 </NextLink>
-        //                 <br />
-        //                 <br />
-        //                 Copyright 2022 Ⓒ LocomotionView Inc.
-        //             </Typography>
-        //         </Box>
-        //     </Container>
-        // </Box>
+        <Box
+            sx={{
+                backgroundColor: '#181a23',
+                color: '#fff',
+                borderTop: '1px solid #232533',
+                pt: { xs: 5, md: 7 },
+                pb: { xs: 2, md: 3 },
+                fontSize: '0.92rem',
+                textAlign: { xs: 'left', md: 'left' },
+            }}
+            component="footer"
+            {...props}
+        >
+            <Container maxWidth="lg" sx={{ px: { xs: 2, md: 0 }, overflowX: 'hidden' }}>
+                <Grid
+                    container
+                    spacing={2}
+                    justifyContent={{ xs: 'left', md: 'flex-start' }}
+                    textAlign={{ xs: 'left', md: 'left' }}
+                >
+                    <Grid item xs={12} md={8}>
+                        <Box>
+                            <Box sx={{ mb: 1.2 }}>
+                                <Typography
+                                    component="span"
+                                    sx={{
+                                        fontWeight: 700,
+                                        minWidth: 90,
+                                        display: 'inline-block',
+                                        fontSize: '0.97em',
+                                    }}
+                                >
+                                    Address
+                                </Typography>
+                                <Typography
+                                    component="span"
+                                    sx={{
+                                        ml: 2,
+                                        color: '#bfc3d4',
+                                        fontSize: '0.97em',
+                                    }}
+                                >
+                                    41566 대구광역시 북구 대학로 80 (산격동,경북대학교) 글로벌플라자 1101호
+                                </Typography>
+                            </Box>
+                            <Box sx={{ mb: 1.2 }}>
+                                <Typography
+                                    component="span"
+                                    sx={{
+                                        fontWeight: 700,
+                                        minWidth: 90,
+                                        display: 'inline-block',
+                                        fontSize: '0.97em',
+                                    }}
+                                >
+                                    Tel
+                                </Typography>
+                                <Typography
+                                    component="span"
+                                    sx={{
+                                        ml: 2,
+                                        color: '#bfc3d4',
+                                        fontSize: '0.97em',
+                                    }}
+                                >
+                                    053-950-6410~6412
+                                </Typography>
+                            </Box>
+                            <Box>
+                                <Typography
+                                    component="span"
+                                    sx={{
+                                        fontWeight: 700,
+                                        minWidth: 90,
+                                        display: 'inline-block',
+                                        fontSize: '0.97em',
+                                    }}
+                                >
+                                    E-mail
+                                </Typography>
+                                <Typography
+                                    component="span"
+                                    sx={{
+                                        ml: 2,
+                                        color: '#bfc3d4',
+                                        fontSize: '0.97em',
+                                    }}
+                                >
+                                    <Link
+                                        href="mailto:a3archi@knu.ac.kr"
+                                        color="#bfc3d4"
+                                        underline="always"
+                                        sx={{ fontSize: '0.97em' }}
+                                    >
+                                        a3archi@knu.ac.kr
+                                    </Link>
+                                </Typography>
+                            </Box>
+                        </Box>
+                    </Grid>
+                </Grid>
+                <Divider sx={{ my: 3, borderColor: '#232533' }} />
+                <Grid
+                    container
+                    alignItems="center"
+                    justifyContent={{ xs: 'center', md: 'flex-start' }}
+                    textAlign={{ xs: 'center', md: 'left' }}
+                    sx={{ fontSize: '0.66rem' }}
+                >
+                    <Grid item xs={12} md={8}>
+                        <Typography sx={{ color: '#bfc3d4', fontSize: '0.66rem' }}>
+                            Copyright(c) [AIBIM]인공지능 기반의 건축설계 자동화 기술개발 연구단. All rights reserved.
+                        </Typography>
+                    </Grid>
+                </Grid>
+            </Container>
+        </Box>
     )
+
+    
+                    // <Grid
+                    //     item
+                    //     xs={12}
+                    //     md={4}
+                    //     sx={{
+                    //         display: 'flex',
+                    //         flexDirection: 'column',
+                    //         alignItems: { xs: 'left', md: 'flex-start' },
+                    //         justifyContent: 'center',
+                    //         maxWidth: 320,
+                    //     }}
+                    // >
+                    //     <Typography sx={{ fontWeight: '100%', mb: 1, fontSize: '0.97em' }}>
+                    //         Family Site
+                    //     </Typography>
+                    //     <Box component="form" sx={{ maxWidth: 260, width: '100%' }}>
+                    //         <Box
+                    //             component="select"
+                    //             sx={{
+                    //                 maxWidth: 260,
+                    //                 width: '100%',
+                    //                 p: 1.2,
+                    //                 borderRadius: 1,
+                    //                 border: '1px solid #232533',
+                    //                 background: 'none',
+                    //                 color: '#bfc3d4',
+                    //                 outline: 'none',
+                    //                 mt: 0.5,
+                    //                 fontSize: '0.97em',
+                    //                 boxSizing: 'border-box',
+                    //             }}
+                    //             defaultValue=""
+                    //         >
+                    //             <option value="" disabled>
+                    //                 관련사이트 바로가기
+                    //             </option>
+                    //             <option value="https://aibim.kr">AIBIM 공식 홈페이지</option>
+                    //             {/* 추가 사이트 필요시 여기에 option 추가 */}
+                    //         </Box>
+                    //     </Box>
+                    // </Grid>
+
+
+                    
+                    // <Grid
+                    //     item
+                    //     xs={12}
+                    //     md={4}
+                    //     sx={{
+                    //         mt: { xs: 1, md: 0 },
+                    //     }}
+                    // >
+                    //     <Box>
+                    //         <Link
+                    //             href="#"
+                    //             color="#bfc3d4"
+                    //             underline="hover"
+                    //             sx={{ mx: 1, fontSize: '0.66rem' }}
+                    //         >
+                    //             개인정보처리방침
+                    //         </Link>
+                    //         <Link
+                    //             href="#"
+                    //             color="#bfc3d4"
+                    //             underline="hover"
+                    //             sx={{ mx: 1, fontSize: '0.66rem' }}
+                    //         >
+                    //             이용약관
+                    //         </Link>
+                    //         <Link
+                    //             href="#"
+                    //             color="#bfc3d4"
+                    //             underline="hover"
+                    //             sx={{ mx: 1, fontSize: '0.66rem' }}
+                    //         >
+                    //             이메일무단수집거부
+                    //         </Link>
+                    //         <Link
+                    //             href="#"
+                    //             color="#bfc3d4"
+                    //             underline="hover"
+                    //             sx={{ mx: 1, fontSize: '0.66rem' }}
+                    //         >
+                    //             사이트맵
+                    //         </Link>
+                    //     </Box>
+                    // </Grid>
 }

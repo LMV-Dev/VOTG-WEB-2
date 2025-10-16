@@ -126,19 +126,21 @@ export const HomeSectionTop = (props) => {
                     variant="h4"
                     sx={{
                         color: 'rgba(255, 255, 255, 0.9)',
-                        fontWeight: 300,
+                        // fontWeight: 300,
+                        fontWeight: 400,
                         fontSize: {
                             xs: '1.5rem',
                             sm: '2rem',
-                            md: '2.5rem',
+                            // md: '2.5rem',
+                            md: '2.0rem',
                         },
-                        maxWidth: 600,
+                        maxWidth: 1200,
                         lineHeight: 1.6,
                         animation: 'fadeInUp 1s ease-out 0.3s both',
                         mb: 1,
                     }}
                 >
-                    스마트 설문 제작 플랫폼
+                    POE (거주 후 평가) post occupancy evaluation
                 </Typography>
 
                 {/* 설명 텍스트 */}
@@ -291,7 +293,9 @@ export const HomeSectionTop = (props) => {
                         }}
                         href="#survey-maker"
                     >
-                        🚀 지금 시작하기
+                        {/* 🚀 지금 시작하기 */}
+                        Smart POE 설문<br/>
+                        지금 시작하기
                     </Button>
                 </Box>
 

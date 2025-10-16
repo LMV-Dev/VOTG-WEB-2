@@ -123,12 +123,19 @@ const Element_RightPanel = (props) => {
                                         disable = true
                                     }
                                     /* 문항 타입에 따른 중복 => (fuction === 1) 활성화 */
+                                    // 객관식
                                     if (questionItem.type === 1 && funcIndex === 1) {
                                         disable = true
                                     }
+                                    // 주관식
+                                    if (questionItem.type === 2 && funcIndex === 1) {
+                                        disable = true
+                                    }
+                                    // 행렬형
                                     if (questionItem.type === 3 && funcIndex === 1) {
                                         disable = true
                                     }
+                                    // 별점형
                                     if (questionItem.type === 4 && funcIndex === 1) {
                                         disable = true
                                     }
@@ -142,7 +149,8 @@ const Element_RightPanel = (props) => {
                                     // 1. & 2. Duplicate
                                     if (questionItem.duplicate === false && funcIndex === 0) {
                                         activeCheck = true
-                                    } else if (questionItem.duplicate === true && funcIndex === 1) {
+                                    } 
+                                    else if (questionItem.duplicate === true && funcIndex === 1) {
                                         activeCheck = true
                                     }
                                     // 3. Logic

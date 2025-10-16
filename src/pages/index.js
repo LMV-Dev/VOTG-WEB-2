@@ -99,7 +99,7 @@ const Home = () => {
 
             <main>
                 <HomeSectionTop />
-                <Box
+                {/* <Box
                     sx={{
                         height: '3px',
                         background: 'linear-gradient(90deg, transparent 0%, rgba(102, 126, 234, 0.6) 25%, rgba(118, 75, 162, 0.8) 50%, rgba(240, 147, 251, 0.6) 75%, transparent 100%)',
@@ -123,7 +123,7 @@ const Home = () => {
                             },
                         },
                     }}
-                />
+                /> */}
                 <HomeSectionDrag onMoveScroll={onMoveToElement} />
             </main>
         </>
