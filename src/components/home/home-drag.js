@@ -345,8 +345,7 @@ export const HomeSectionDrag = ({ onMoveScroll }) => {
                                                     lineHeight: 1.2,
                                                 }}
                                             >
-                                                {/* 클릭만하면 서베이 완성! 🎯 */}
-                                                편리한 POE 서베이
+                                                클릭만하면 서베이 완성! 🎯
                                             </Typography>
                                             <Typography
                                                 variant="h6"
